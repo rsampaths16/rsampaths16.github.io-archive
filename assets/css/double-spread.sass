@@ -1,0 +1,47 @@
+---
+---
+@import 'base'
+
+.double-spread
+    min-height: 100vh
+    display: flex
+    align-items: center
+    justify-content: center
+    font-family: $main-font
+    
+    &.landing
+        background-color: $primary-color
+        text-shadow: 0px 0px 40px #fff
+    
+    div
+        padding:
+            left: 15%
+            right: 15%
+        > *
+            align-items: center
+            justify-content: center
+            display: flex
+    
+    h1
+        font-size: 32px
+        @media screen and (min-width: $responsive-width)
+            font-size: 72px
+    h2
+        font-size: 24px
+        @media screen and (min-width: $responsive-width)
+            font-size: 32px
+
+
+
+img.display-picture
+    display: block
+    margin-left: auto
+    margin-right: auto
+    height: 128px
+    width: 128px
+    border-radius: 50%
+    border: 2px solid #fff
+    box-shadow: 0px 3px 2px #111
+    @media screen and (min-widht: $responsive-width)
+        height: 192px
+        width: 192px

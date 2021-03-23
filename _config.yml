@@ -1,0 +1,30 @@
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Data For SEO
+title: Sampath Sukesh Ravolaparthi
+description: Hey, I'm Sampath ... xyz
+url: https://sampath.xyz
+author: Sampath Sukesh Ravolaparthi
+twitter:
+  username: rsampaths16
+  card: summary
+social:
+  name: Sampath Sukesh Ravolaparthi
+  links:
+    - https://twitter.com/rsampaths16
+    - https://www.facebook.com/rsampaths16
+    - https://www.linkedin.com/in/rsampaths16
+    - https://github.com/rsampaths16
+    - https://www.codechef.com/users/rsampaths16
+    - https://codeforces.com/profile/rsampaths16
+    - https://www.spoj.com/users/rsampaths16
+    - https://www.topcoder.com/members/rsampaths16
+    - https://www.hackerrank.com/rsampaths16
+    - https://www.hackerearth.com/@rsampaths16
+    - https://www.techgig.com/rsampaths16
+
+sass:
+  style: compressed
+  sourcemap: development

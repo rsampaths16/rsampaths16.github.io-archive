@@ -1,0 +1,51 @@
+languages:
+  - C
+  - C++
+  - Java
+  - Scala
+  - HTML
+  - CSS
+  - Javascript
+  - JSP
+  - Python
+  - Apache Freemarker Text
+  - JSON
+  - Perl
+  - MySQL
+  - ION
+libraries:
+  - Twitter Nodes
+  - Spring
+  - Google Guice
+  - JavaX
+  - Spring
+  - TestNG
+  - Hamcrest
+  - Lombok
+  - JQuery
+  - Selenium
+  - Appium
+  - PyGame
+  - Keras
+  - TensorFlow
+  - Django
+  - OpenAI-Gym
+technologies:
+  - Git
+  - Docker
+  - Tmux
+  - SSH
+  - Vim
+  - Sublime Text
+  - IntellJ IDEA
+  - Chrome DevTools
+  - PostMan
+  - Linux
+  - MacOS
+  - Windows
+  - AWS S3
+  - AWS DyanmoDB
+  - AWS Elastic Search
+  - AWS Elastic Container Service
+  - AWS Kinesis
+  - AWS Key Management Service

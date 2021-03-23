@@ -1,0 +1,224 @@
+- name: Collapsed view for non-returnable items
+  year: 2020
+  description: The items page is where customers can select the items they want to return. Some of the items cannot be returned either due to legal reasons or the expiry of the return window. It could be distracting to have those items in view when initiating returns workflow. Working on collapsing non-returnable items on the items page.
+  technologies:
+    - Java
+    - Scala
+    - JSP
+    - Twitter Nodes
+
+- name: Cross-Site Request Forgery protection for returns workflows
+  year: 2020
+  description: Cross-site request forgery ( CSRF ) is a web security vulnerability that allows an attacker to induce users to perform actions that they do not intend to perform. I worked on protecting all state-changing requests in returns workflow from CSRF. It is secured using origin-header verification and token verification mechanisms. Close to 30 state-changing requests were secured from CSRF. As a side-effect, we saw a drastic reduction in transient issues we usually face. Responsibilities include onboarding a CSRF framework, generation and addition of tokens in requests, and verification of tokens while processing requests.
+  technologies:
+    - Java
+    - Scala
+    - Javascript
+    - JSP
+    - Spring
+
+- name: Customer Data Privacy for Returns Org
+  year: 2020
+  description: Under many privacy laws, such as the General Data Protection Regulation ( GDPR ) and the California Consumer Privacy Act ( CCPA ), companies are required to delete personal data when the legal basis for processing it expires. There are two ways legal basis can expire, (1) through on-demand data deletion ( OD3 ) when a customer closes their account and requests data deletion and there is no legal reason to continue to use the data, or (2) through programmatic data deletion ( PD2 ), which s deletion triggered automatically when the retention period as outlined in the data retention and deletion standard ( DRDS ) expires. Responsibilities include getting our team data sets reviewed by tax and accounting, legal to finalize retention policies, implement PD2 and OD3, and onboard for OD3 signaling, and making services resilient to missing data.
+  technologies:
+    - Java
+    - Scala
+    - Python
+    - S3
+    - DyanmoDB
+    - Elastic Search
+
+- name: Carrier specific contact messaging in return summary page
+  year: 2020
+  description: Messaging on how a Carrier would contact the customers were provided in the returns summary page. It was implemented as part of a drive to decrease customer contacts as few carriers don't call the customer on arrival and other causes. Responsibilities include design and implementation at the frontend and backend services.
+  technologies:
+    - Java
+    - Scala
+    - JSP
+    - Twitter Nodes
+
+- name: Signature V4 migration of s3 pre-signed URLs
+  year: 2020
+  description: QR codes embedded in some of the returns emails are s3 pre-signed URLs. As part of Signature V2 deprecation for s3, we needed to migrate to Signature V4. A problem raised is the validity of s3 URLs is at most a week. Worked on conversion and embedding images as base64 data instead of pre-signed URLs.
+  technologies:
+    - Java
+    - Google Guice
+    - JavaX
+    - Apache Freemarker Text
+
+- name: Replay testing service for returns services
+  year: 2020
+  description: Kannadi is an internal server that can be set up as a replay testing service for individual service. Traffic from production is replayed against staging stack. Each server can be set up only for one service at a time, which became a hassle to set up, onboard, and maintain multiple services for replay testing. I worked to make the replay server be onboarded by multiple services. Once a single replay server instance is set up, it is very easy to onboard new services for replay testing. I've onboarded five internal services for replay testing to make them more Continous Integration / Continous Deployment ( CI/CD ) pipeline oriented. Responsibilities include the redesign of onboarding, replay identity of the replay server, and onboard all backend services owned by my team.
+  technologies:
+    - Java
+    - Spring
+
+- name: Returns Summary Email Template Restructures
+  year: 2020
+  description: I Worked on the redesign of Return Summary Emails. Changes were made as part of a campaign to make emails more accessible and understandable. Responsibilities include template restructure and redesign.
+  technologies:
+    - Apache Freemarker Text
+
+- name: Evaluate Refund at First Scan considering Return Methods too
+  year: 2019
+  description: Refund at First Scan ( RFS ) is a mechanism to refund the customer as soon as the product is scanned by the carrier. It is not required for the product to reach the fulfillment center to initiate refunds for these orders. It originally depended only on the product returned, the customer, and the payment instrument used. The requirement was to use return methods like carrier type too. Since return resolution and return method selections are two separate processes and RFS eligibility is attached at return resolution, a second pass is invoked with additional rules considering only return methods for RFS eligibility.
+  technologies:
+    - Java
+    - Spring
+    - JSON
+
+- name: Launced Product Disclaimers in Items Page
+  year: 2019
+  description: The items page is where customers can choose the Items they want to return. Disclaimers like legal messages, basic troubleshooting, misconceptions, etc are surfaced at the product level. Information surfaced helps drive down false positive returns, reduce customer contacts, keep the customer informed on how to safely return products, etc. Responsibilities include implementation at the frontend and configuring disclaimers for a few product categories.
+  technologies:
+    - Java
+    - Scala
+    - JSP
+    - JSON
+    - Twitter Nodes
+
+- name: Launced Product Disclaimers in Return Label Page
+  year: 2019
+  description: The return label page is where customers view and print the return label for items they are returning. Important disclaimers like legal information and privacy notices for returned products are surfaced here. Responsibilities include design and implementation at the frontend and backend. It also included configuring disclaimers for a few product categories.
+  technologies:
+    - Java
+    - Scala
+    - JSP
+    - JSON
+    - Twitter Nodes
+
+- name: Launced Product Disclaimers in Return Summary Page
+  year: 2019
+  description: The return summary page is where customers view the summary of the items they are returning or have returned. Important disclaimers like legal information and privacy notices for returned products are surfaced here. Responsibilities include design and implementation at the frontend and backend. It also included configuring disclaimers for a few product categories.
+  technologies:
+    - Java
+    - Scala
+    - JSP
+    - JSON
+    - Twitter Nodes
+
+- name: Launched Returnless Refunds to Amazon Gift Cards
+  year: 2019
+  description: Returnless Refund is a refund resolution where the customer is offered a refund without the requirement of returning the item to Amazon. Initially, the refund was issued only to the Original Payment Instrument ( OPI ) of the customer. I worked on launching the Electronic Gift Certificate ( EGC ) as an alternative refund payment instrument. With this, the customers can choose to get their refund into their Amazon gift balance, which is issued instantly can be used more conveniently. Responsibilities include design and implementation both at the frontend and backend.
+  technologies:
+    - Java
+    - Scala
+    - JSP
+    - JSON
+    - Twitter Nodes
+
+- name: Integration test suite for Displayable Offerings Service
+  year: 2019
+  description: Displayable Offerings are visual markings needed to generate refund options. Given the list of refund options, it provides information on how to render/display these offerings. It works with the refund option text, order, color coding, pre-selection and other properties to drive better returns. I worked on writing integration tests that generates tests based on the configurations and also verifies properties of the Displayable Offerings. This is to make the Service have a more Continous Integration / Continous Deployment ( CI/CD ) pipeline. Responsibilities include, design and writing of integration tests, remove manual approval steps.
+  technologies:
+    - Java
+    - TestNG
+    - Hamcrest
+
+- name: LOP & COP compliance for returns emails
+  year: 2019
+  description: Originally returns emails were restricted to few Languages per Nation. Worked on making multiple return emails Language of Preference ( LOP ) and Currency of Preference ( COP ) compliant. Responsibilities included analysis and normalization of existing email templates, incorporate translation service client, convert to an extendable and language/currency indifferent template.
+  technologies:
+    - Apache FreeMarker Text
+
+- name: Onboard Service to Cloudauth
+  year: 2019
+  description: Cloudauth is an OAuth2-based solution for internal amazon Authorization and Authentication needs. It supersedes the client components and protocols of then Amazon AAA. It is a senior-team ( S-TEAM ) goal to onboard at least one service per sub-org in 2019. Onboarding included securing traffic with TLS terminating on the hosts, registering service and client identities, operations provided by the service, relationships between the service and clients. A lot of experimentation was involved find proper onboarding procedures since it was the first service onboarded in our Org. This experience helped me guide others onboard the remaining services. Responsibilities include research & experimentation, onboarding, registering, and documenting.
+  technologies:
+    - Java
+
+- name: Smart Resolutions Launch
+  year: 2019
+  description: Smart Resolution is a program to provide smart default resolution and resolutions ordering for the customer. It helps customers choose the right resolutions tailored to them and the product they are returning. The goal of the proect is for the defaults to be accurate enough for the customer to not feel the need to alter the defaults given. It included experiments from adding recommended tags, ordering, highlighting, collapsing of return resolutions with manual configurations and machine learning. Responsibilities include implementing the highlighting and collapsing features needed for experiment and launch.
+  technologies:
+    - Java
+    - Scala
+    - JSP
+    - Javascript
+    - Spring
+
+- name: Automated hotswaps of Inline address suggestions data
+  year: 2018
+  description: Address Inline Suggestions help customers to enter/choose the correct address in the address forms across Amazon. This works by providing relevant suggestions & completions as the customer fills in their address. I worked on implementing a periodic hot-swap mechanism that processes and compiles addresses that are streamed from internal services and updates the address suggestions data per country and region. It also takes care of priming and validating new data before hot-swapping. Responsibilities include design and implementation of backend integrating the solution.
+  technologies:
+    - Java
+    - Perl
+    - TestNG
+    - Lombok
+
+- name: Free-text use-case expansion for Smart Delivery Assistant
+  year: 2018
+  description: Smart Delivery Assistant ( SDA ) is a notification system to surface address issues to customers and delivery agents to help resolve last-mile delivery issues. Original use-cases ware limited to ask and surface targetted issues like gate-code, address-type, availability, etc. Customers have problems unique to their address that is easiest to express in a free-form. I worked on expanding SDA with free-text use-case expansion. Here the customer can include any issues, suggestions & guidance that they think the delivery agents ( DA ) might need. This is surfaced to the DA at the time of delivery. It is expandable to support video, audio, and image use-cases too. Responsibilities include the design and implementation of frontend and backend for the new launch.
+  technologies:
+    - Java
+    - HTML
+    - CSS
+    - Javascript
+    - JSP
+    - Spring
+    - TestNG
+    - JQuery
+
+- name: Functional UI test suite for Smart Delivery Assistant
+  year: 2018
+  description: Smart Delivery Assistant ( SDA ) is a notification system to surface address issues to customers and delivery agents to help resolve last-mile delivery issues. I developed a UI test suite as a part of continuous integration/continuous deployment (CI/CD) pipeline workflow for SDA. The test suite validates the functional requirements for notifications and forms surfaced to customers in desktop and mobile platforms. Responsibilities include designing and implementing the functional UI test suite and integrate it as a part of the CI/CD pipeline.
+  technologies:
+    - Java
+    - Selenium
+    - Appium
+    - TestNG
+
+- name: Alieo - Game
+  year: 2017
+  description: Developed a 2D platformer Mario like game using PyGame framework. The objective of the game is to reach the end of the map. Points are based on coins collected, enemies defeated and time-left. Implemented as a project for OOSE course work.
+  technologies:
+    - Python
+    - PyGame
+
+- name: Diabetic Retinopathy Identification - Deep Learning
+  year: 2017
+  description: Diabetic Retinopathy is one of the leading causes of Glaucoma which can cause early blindness in people. It is a disease that can be prevented when detected early. I worked on automating the identification of Diabetic Retinopathy using convolutional neural networks ( CNN ). I worked on training the CNN and setting up workflow for automated testing with image upload. When the API is invoked with image as data it is pre-processed and tested for Glaucoma and responds with result.
+  technologies:
+    - Python
+    - Keras
+    - TensorFlow
+
+- name: ReRes - Increase image resolution
+  year: 2017
+  description: ReRes ( or ) Revised Resolution is a project that deals with increasing selfie image resolution from 128x128 patch to 256x256 patch. A Convolution - Deconvolution Neural Network was used to create this model. Images are patched, passed to the network, and stiched back to form a image of better resolution. This was done for academic project credit.
+  technologies:
+    - Python
+    - Keras
+    - TensorFlow
+
+- name: AddKart an E-Commercial Portal
+  year: 2017
+  description: AddKart is an E-commercial portal for buyers and sellers. It includes items page, cart, checkout, and order history. It was implemented as a project for Database Management Systems course work.
+  technologies:
+    - Python
+    - HTML
+    - CSS
+    - Javascript
+    - MySQL
+    - Django
+
+- name: Classic control problem CartPole, and MountainCar - Genetic Algorithm Bot
+  year: 2017
+  description: These are game problems in OpenAI Gym. I've implemented a genetic algorithm-based neural network to make control decisions in the classic control problems CartPole and Mountain Car. The top X% of every generation survives and passes offsprings to the next generation with a Y% mutation. Z% of new samples are introduced to every generation.
+  technologies:
+    - Python
+    - OpenAI-Gym
+
+- name: Questionnaire launches and configurations
+  year: ~
+  description: Worked in lanches and configuration of new and existing questionnaires for various products through business requirements, like Amazon Merch, Amazon Softlines, Amazon Fresh, Amazon Pantry, Amazon Devices, Jewelry, Shoes, Watches, Washing Machines, etc.
+  technologies:
+    - Java
+    - ION
+
+- name: Return, Exchange, Refund policy launches and changes
+  year: ~
+  description: Returns, Exchanges, Refunds, and other policies are configurable internally. Worked in lanches and configuration of various products through business requirements, like Amazon Merch, Amazon Softlines, Amazon Fresh, Amazon Pantry, Amazon Devices, Jewelry, Shoes, Watches, Washing Machines, etc. Also worked on onboarding a few of the configurations to Business Configuration Manager, where Product Managers can directly make policy changes, without the involvement of developers.
+  technologies:
+    - Java
+    - ION

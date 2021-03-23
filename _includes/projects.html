@@ -1,0 +1,17 @@
+{% for project in site.data.projects %}
+<div class="quotation">
+    <div class="quotation__title">
+        {{ project.name }}
+        {% if project.year %}
+        <div class="quotation__date">
+            {{ project.year }}
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="quotation__content">
+        <p>{{ project.description }}</p>
+        {{ project.technologies | english_list: "Technology: ", "Technologies: " }}
+    </div>
+</div>
+{% endfor %}

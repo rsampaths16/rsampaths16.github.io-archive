@@ -1,0 +1,14 @@
+{% for experience in site.data.experience %}
+<div class="quotation">
+    <div class="quotation__title">
+        {{ experience.role }} at {{ experience.company }}
+        <div class="quotation__date">
+            {{ experience.start }} - {{ experience.end }}
+        </div>
+    </div>
+
+    <div class="quotation__content">
+        <p>{{ experience.description }}</p>
+    </div>
+</div>
+{% endfor %}

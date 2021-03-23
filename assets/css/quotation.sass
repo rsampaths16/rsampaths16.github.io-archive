@@ -1,0 +1,46 @@
+---
+---
+@import 'base'
+
+.quotation
+    padding: 15%
+        top: 2.5%
+        bottom: 2.5%
+    
+    &__title
+        font:
+            size: large
+            family: $quotation-title-font
+            weight: normal
+        @media screen and (min-width: $responsive-width)
+            font:
+                size: xx-large
+                weight: bold
+        
+        > .quotation__date
+            font:
+                size: x-small
+                weight: lighter
+
+            @media screen and (min-width: $responsive-width)
+                font:
+                    size: small
+                    weight: lighter
+    
+    &__content
+        padding:
+            top: 2%
+        text:
+            indent: 10%
+        font:
+            family: $quotation-content-font
+            size: 12px
+
+        @media screen and (min-width: $responsive-width)
+            padding:
+                top: 2%
+            text:
+                indent: 10%
+            font:
+                family: $quotation-content-font
+                size: 16px

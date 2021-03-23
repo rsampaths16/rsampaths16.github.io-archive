@@ -27,4 +27,4 @@ social:
 
 sass:
   style: compressed
-  sourcemap: development
+  sourcemap: never 

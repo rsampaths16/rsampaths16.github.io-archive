@@ -1,0 +1,15 @@
+{% for achievement in site.data.achievements %}
+<div class="quotation">
+    <div class="quotation__title">
+        {{ achievement.achievement }}
+        <div class="quotation__date">
+            {{ achievement.date }}
+        </div>
+    </div>
+    <div class="quotation__content">
+        {% for description in achievement.description %}
+        <p>{{ description }}</p>
+        {% endfor %}
+    </div>
+</div>
+{% endfor %}

@@ -3,7 +3,19 @@
         Languages
     </div>
     <div class="quotation__content">
-        {{ site.data.technical_skills.languages | unordered_html_list_joined_with_and }}
+        {%- assign languages = site.data.technical_skills.languages | sanelist -%}
+        {%- if languages.size > 0 -%}
+            <ul>
+            {%- for element in languages -%}
+                {%- case element.type -%}
+                    {%- when "item" -%}
+                        <li>{{- element.data -}}</li>
+                    {%- when "delimiter" -%}
+                        {%- if element.isLast %} and {% else %} {% endif -%}
+                {%- endcase -%}
+            {%- endfor %}
+            </ul>
+        {%- endif -%}
     </div>
 </div>
 
@@ -12,7 +24,19 @@
         Libraries
     </div>
     <div class="quotation__content">
-        {{ site.data.technical_skills.libraries | unordered_html_list_joined_with_and }}
+        {%- assign libraries = site.data.technical_skills.libraries | sanelist -%}
+        {%- if libraries.size > 0 -%}
+            <ul>
+            {%- for element in libraries -%}
+                {%- case element.type -%}
+                    {%- when "item" -%}
+                        <li>{{- element.data -}}</li>
+                    {%- when "delimiter" -%}
+                        {%- if element.isLast %} and {% else %} {% endif -%}
+                {%- endcase -%}
+            {%- endfor %}
+            </ul>
+        {%- endif -%}
     </div>
 </div>
 
@@ -21,6 +45,18 @@
         Technologies
     </div>
     <div class="quotation__content">
-        {{ site.data.technical_skills.technologies | unordered_html_list_joined_with_and }}
+        {%- assign technologies = site.data.technical_skills.technologies | sanelist -%}
+        {%- if technologies.size > 0 -%}
+            <ul>
+            {%- for element in technologies -%}
+                {%- case element.type -%}
+                    {%- when "item" -%}
+                        <li>{{- element.data -}}</li>
+                    {%- when "delimiter" -%}
+                        {%- if element.isLast %} and {% else %} {% endif -%}
+                {%- endcase -%}
+            {%- endfor %}
+            </ul>
+        {%- endif -%}
     </div>
 </div>

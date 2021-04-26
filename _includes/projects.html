@@ -11,7 +11,24 @@
 
     <div class="quotation__content">
         <p>{{ project.description }}</p>
-        {{ project.technologies | english_list: "Technology: ", "Technologies: " }}
+        {%- assign technologies = project.technologies | sanelist -%}
+        {%- if technologies.size == 1 -%}
+            Technology:&nbsp;
+        {%- elsif technologies.size > 1 -%}
+            Technologies:&nbsp;
+        {%- endif -%}
+        {%- for element in technologies -%}
+            {%- case element.type -%}
+                {%- when "item" -%}
+                    {{- element.data -}}
+                {%- when "delimiter" -%}
+                    {%- if element.isLast -%}
+                        &nbsp;and&nbsp;
+                    {%- else -%}
+                        ,&nbsp;
+                    {%- endif -%}
+            {%- endcase -%}
+        {%- endfor -%}
     </div>
 </div>
 {% endfor %}

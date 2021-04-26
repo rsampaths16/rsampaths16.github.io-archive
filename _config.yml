@@ -1,6 +1,7 @@
 plugins:
-  - jekyll-sitemap
+  - jekyll-sanelist
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Data For SEO
 title: Sampath Sukesh Ravolaparthi
